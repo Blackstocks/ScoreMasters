@@ -1,0 +1,336 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    overflow-y: overlay;
+    width: 100%;
+    background-color: white;
+}
+
+.main .top{
+    display: flex;
+    align-items: flex-start;
+}
+
+.main .top #logo{
+    margin: 0.5rem;
+    height: 8vh;
+}
+
+.main .top #profile{
+    margin: 0.5rem;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+    padding: 2px;
+    border: 2px solid #00000025;
+    position: absolute;
+    right: 1rem;
+}
+
+.main .middle{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main .middle .left{
+    height: 90%;
+    background-color: #00000025;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main .middle .left .box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.main .middle .left .box iframe{
+    border-radius: 10px;
+}
+
+#presentationContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.main .middle .left .bottom{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    gap: 6vw;
+}
+
+.main .middle .left .bottom > span{
+    display: flex;
+    justify-content: center;
+    gap: 3vw;
+    margin-left: 16.66%;
+}
+
+.main .middle .left  button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: all 0.1s linear;
+    border: none;
+    box-shadow: none;
+}
+
+.main .middle .left  button:hover{
+    transform: scale(0.95);
+}
+
+.main .middle #contentBox:fullscreen{
+    background-color: #dadada;
+    color: black;
+}
+
+.main .middle #contentBox:fullscreen #preview{
+    top: 90%;
+    left: 95%;
+}
+
+.main .middle .left #preview{
+    position: absolute;
+    margin-right: 0;
+    top: 85%;
+    left: 62%;
+    background-color: white;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+}
+
+.main .middle .right{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1vh;
+}
+
+.main .middle .right h2{
+    padding: 0;
+    margin: 0;
+}
+
+.main .middle .right .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 85%;
+}
+
+.main .middle .right .box ul{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.main .middle .right .box ul li{
+    padding: 0;
+    margin: 0;
+}
+
+.main .middle .right .bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 15%;
+    /* gap: 1vw; */
+    padding: 0 2rem;
+}
+
+.main .middle .right .bottom button{
+        appearance: none;
+        background-color: transparent;
+        border: 0.125em solid #1A1A1A;
+        border-radius: 0.8em;
+        box-sizing: border-box;
+        color: #3B3B3B;
+        cursor: pointer;
+        display: inline-block;
+        font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        font-size: 16px;
+        font-weight: 600;
+        line-height: normal;
+        margin: 0;
+        min-height: 3em;
+        min-width: 0;
+        outline: none;
+        padding: 0.25em 1em;
+        text-align: center;
+        text-decoration: none;
+        transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        will-change: transform;
+}
+
+
+.main .middle .right .bottom button:disabled {
+    pointer-events: none;
+}
+   
+.main .middle .right .bottom button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+}
+   
+.main .middle .right .bottom button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.main .middle .right .bottom .disabled{
+    display: none;
+}
+
+.main .middle .right .bottom .pagination{
+    min-width: 2.2rem;
+    min-height: 2.2rem;
+    padding: 0;
+    border-radius: 100%;
+}
+
+.main .middle .right .bottom .nav{
+    min-width: 2.6rem;
+    min-height: 2.6rem;
+    padding: 0;
+    border-radius: 1rem;
+}
+
+.main .middle .right .bottom .page{
+    background-color: black;
+    color: white;
+}
+
+
+.notShow{
+    visibility: hidden;
+}
+
+#scoreSlider{
+    width: 300px;
+}
+
+
+/* 
+.scale-rating {
+    display: flex;
+  }
+  
+  .scale-rating label {
+    width: 1.5rem;
+    height: 30px;
+    background-color: #ccc;
+    margin: 0 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+  }
+  
+  .scale-rating input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .scale-rating label:hover,
+  .scale-rating input[type="radio"]:checked ~ label {
+    background-color: black;
+    color: #fff;
+  }
+  
+  .scale-rating input[type="radio"]:checked ~ label ~ label {
+    background-color: black;
+    color: #fff;
+  }
+ */
+
+ .slider {
+    width: 90%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    }
+    .slider p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding-left: 30px;
+    color: black;
+    width: 2rem;
+    }
+    .slider input[type="range"] {
+    -webkit-appearance:none !important;
+    width: 420px;
+    height: 2px;
+    background: black;
+    border: none;
+    outline: none;
+    }
+    .slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    width: 25px;
+    height:25px;
+    background: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    }
+    .slider input[type="range"]::-webkit-slider-thumb:hover {
+    background: black;
+    }
+
+  @media (max-width:980px) {
+
+    .main .top #logo{
+        height: 3rem;
+    }
+
+    .main .top #profile{
+        height: 4rem;
+        width: 4rem;
+    }
+
+    .main .middle{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main .middle .left{
+        width: 80%;
+        height: 60vh;
+        min-height: fit-content;
+    }
+  }

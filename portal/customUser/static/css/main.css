@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+body{
+    height: 97svh;
+    background-color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+}
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 12svh;
+}
+
+.top #logo{
+    height: 10vh;
+    margin: 0 2rem;
+}
+
+.middle .left .info h1{
+    margin: 2rem 0;
+}
+
+.middle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 85svh;
+}
+
+.middle .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.middle .right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+    border-radius: 0.75rem;
+    background-color: black;
+    padding: 1.5rem;
+    color: rgba(243, 244, 246, 1);
+    height: fit-content;
+}
+  
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1rem;
+    font-weight: 700;
+}
+  
+.form {
+    margin-top: 1.5rem;
+}
+  
+  .input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: rgba(156, 163, 175, 1);
+    margin-bottom: 4px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid rgba(55, 65, 81, 1);
+    outline: 0;
+    background-color: #171717;
+    padding: 0.75rem 1rem;
+    color: rgba(243, 244, 246, 1);
+  }
+  
+  .input-group input:focus {
+    border-color: #fcfcfc;
+  }
+  
+  .sign {
+    display: block;
+    width: 100%;
+    background-color: #fcfcfc;
+    padding: 0.75rem;
+    text-align: center;
+    color: black;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .sign:hover{
+    background-color: #383838;
+    color: white;
+  }
+
+  .signin {
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgba(156, 163, 175, 1);
+  }
+
+  .signin a{
+    color: rgba(156, 163, 175, 1);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+@media (max-width: 1000px) {
+  body{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .top{
+    justify-content: center;
+  }
+  .middle{
+    flex-direction: column;
+    width: 100%;
+    gap: 5vh;
+  }
+  .middle .left{
+    width: 80%;
+    text-align: center;
+  }
+  .middle .right{
+    width: 60%;
+    min-width: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,121 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="left col-9">
+        <div class="top">
+            <h1>Dashboard</h1>
+            <p>Welcome back, <span style="text-transform: capitalize"><b>{{ user.get_username }}</b></span></p>
+        </div>
+        <div class="middle">
+            <div class="pricard">
+                <div class="profile">
+                    
+                </div>
+                <div class="activity">
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="bottom">
+            <h3>Past Activity:</h3>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Action</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Porter</td>
+                    <td>Judged</td>
+                    <td>1:00 PM</td>
+                </tr>
+            </table>
+        </div> -->
+        <div class="bottom">
+            <h3>Guidelines for scoring: </h3>
+                <p>1. Go to Participants option on the left side menu.</p>
+                <p>2. Press Judge button on the startup to start scoring.</p>
+                <p>3. On the judging pane, on left side, ppt of the startup is presented, you can use arrow keys below ppt to move slide forward or backward.</p>
+                <p>4. On the judging pane, on right side there are total 9 parameters, click the '>' arrow to go to next parameters.</p>
+                <p>5. Move the slider to score.</p>
+                <p>6. Once you have done scoring of all parameters, click the submit button.</p>
+                <p>7. Once submitted, you'll go back to Participants section to judge the next startup.</p>
+        </div>
+
+        <div class="bottom">
+            <h3>Guidelines for judging: </h3>
+                <p>1. Ask insightful questions to gauge the depth of the startup's understanding of its market and challenges. 
+                Also, kindly encourage open and candid responses during Q&A sessions.</p>
+                <p> 2. Adhere to the allocated time for each startup's presentation and Q&A (10+5 minutes respectively). 
+                     This ensures a fair and consistent evaluation process for all participants.</p>
+                   <p>3. Collaborate with fellow judges to ensure a comprehensive evaluation.
+                    You can discuss differing opinions to arrive at a fair and well-rounded decision.
+                    </p>
+                
+        </div>
+    </div>
+    <!-- <div class="right col-3">
+        <div class="profile">
+            <img src="../../static/images/profile.jpeg" id="profile" alt="">
+            <h2><span style="text-transform: capitalize;">{{ user.get_username }}</span></h2>
+
+            <ul>
+                <li>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
+                            <path d="M24,4H6C4.895,4,4,4.895,4,6v18c0,1.105,0.895,2,2,2h18c1.105,0,2-0.895,2-2V6C26,4.895,25.105,4,24,4z M10.954,22h-2.95 v-9.492h2.95V22z M9.449,11.151c-0.951,0-1.72-0.771-1.72-1.72c0-0.949,0.77-1.719,1.72-1.719c0.948,0,1.719,0.771,1.719,1.719 C11.168,10.38,10.397,11.151,9.449,11.151z M22.004,22h-2.948v-4.616c0-1.101-0.02-2.517-1.533-2.517 c-1.535,0-1.771,1.199-1.771,2.437V22h-2.948v-9.492h2.83v1.297h0.04c0.394-0.746,1.356-1.533,2.791-1.533 c2.987,0,3.539,1.966,3.539,4.522V22z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
+                            <path d="M15,3C8.373,3,3,8.373,3,15c0,6.016,4.432,10.984,10.206,11.852V18.18h-2.969v-3.154h2.969v-2.099c0-3.475,1.693-5,4.581-5 c1.383,0,2.115,0.103,2.461,0.149v2.753h-1.97c-1.226,0-1.654,1.163-1.654,2.473v1.724h3.593L19.73,18.18h-3.106v8.697 C22.481,26.083,27,21.075,27,15C27,8.373,21.627,3,15,3z"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
+                        <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
+                    </svg>
+                </li>
+            </ul>
+        </div>
+        <div class="stats">
+            <h4>Activity:</h4>
+            <ul>
+                <li>
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <div>
+                        <h5>Time Spent</h5>
+                        <p>1Hr 30Min</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">
+                        inventory
+                    </span>
+                    <div>
+                        <h5>Startups Judged</h5>
+                        <p>200</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="material-symbols-outlined">
+                        history
+                    </span>
+                    <div>
+                        <h5>Last Login</h5>
+                        <p>10:00 AM, 12/03/23</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+{% endblock content %}

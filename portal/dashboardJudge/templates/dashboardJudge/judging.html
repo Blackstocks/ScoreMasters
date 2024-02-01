@@ -1,0 +1,250 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="top col-12">
+        <img src="{% static 'images/ecell-logo-mobile-black.png' %}" id="logo" ></img>
+        <h2>Judging Portal</h2>
+        <!-- <img src="{% static 'images/profile.jpeg' %}" id="profile"></img> -->
+    </div>
+    <div class="middle">
+        <div class="left col-7" id="contentBox">
+            <div class="box" id="viewerContainer">
+                <iframe src="{{embed_link}}" frameborder="0" width="100%" height="100%" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                {% comment %} <iframe src="https://iitkgpacin-my.sharepoint.com/personal/abhinavreddy05_kgpian_iitkgp_ac_in/_layouts/15/Doc.aspx?sourcedoc={cdac0692-3c48-4ddb-962f-bfd23798029a}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" width="100%" height="100%" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe> {% endcomment %}
+            </div>
+            <button id="preview">
+                <span class="material-symbols-outlined">
+                    open_in_full
+                </span>
+            </button>
+            
+            {% comment %} <div class="bottom">
+                <span class="col-10">
+                    <button class='button' id="prevButton">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                        Prev
+                    </button>
+                    <button class='button' id="nextButton">Next
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </button>
+                </span>
+                <button id="preview">
+                        <span class="material-symbols-outlined">
+                            open_in_full
+                        </span>
+                </button>
+            </div> {% endcomment %}
+        </div>
+        
+            <!-- {% if not form_submitted %} -->
+        <div class="right col-4">
+            <h2>Juding Parameters</h2>
+            <div class="box">
+                
+                    
+                <ul>
+                    
+                    <!-- <li class="parameters">
+                        <h3>Judging parameter {{ i }}</h3>
+                        <div class="slider">
+                            <form id="scoreForm" action="../../create_score/6/1/" method="POST">
+                                {% csrf_token %}
+                                {% for i in "123456789" %}
+                                <input type="range" name="p{{ i }}" min="0" max="10" value="0" step="0.5" oninput="rangeValue{{i}}.innerText = this.value">
+                                <p id="rangeValue{{ i }}">0</p>
+                                {% endfor %}
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </li> -->
+                    
+                        
+                            
+                            <li class="parameters">
+                                
+                                <div class="slider">
+<!-- ../../create_score/6/1/ -->
+                                    <form id="scoreForm" action="{% url 'create_score_view' participant_id=participant_id judge_id=judge_id %}" method="POST">
+                                        {% csrf_token %}
+
+                                        <div id="page1" >
+                                        <h3>Innovation</h3>
+                                        <input type="range" class="inp1" name="p1" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue1.innerText = this.value">
+                                        <p id="rangeValue1">0</p>
+
+                                        <h3>Feasibility</h3>
+                                        <input type="range" class="inp1" name="p2" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue2.innerText = this.value">
+                                        <p id="rangeValue2">0</p>
+
+                                        <h3>Market Potential</h3>
+                                        <input type="range" class="inp1" name="p3" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue3.innerText = this.value">
+                                        <p id="rangeValue3">0</p>
+                                        </div>
+
+                                        <div id="page2" style="display: none;">
+                                        <h3>Scalability</h3>
+                                        <input type="range" class="inp1" name="p4" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue4.innerText = this.value">
+                                        <p id="rangeValue4">0</p>
+
+                                        <h3>Presentation Skills</h3>
+                                        <input type="range" class="inp1" name="p5" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue5.innerText = this.value">
+                                        <p id="rangeValue5">0</p>
+
+                                        <h3>Understanding Challenges</h3>
+                                        <input type="range" class="inp1" name="p6" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue6.innerText = this.value">
+                                        <p id="rangeValue6">0</p>
+                                        </div>
+
+                                        <div id="page3" style="display: none;">
+                                        <h3>Team Dynamics</h3>
+                                        <input type="range" class="inp1" name="p7" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue7.innerText = this.value">
+                                        <p id="rangeValue7">0</p>
+
+                                        <h3>Judging Parameter 8</h3>
+                                        <input type="range" class="inp1" name="p8" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue8.innerText = this.value">
+                                        <p id="rangeValue8">0</p>
+
+                                        <h3>Judging Parameter 9</h3>
+                                        <input type="range" class="inp1" name="p9" min="0" max="10" value="0" step="0.5" id="scoreSlider" oninput="rangeValue9.innerText = this.value">
+                                        <p id="rangeValue9">0</p>
+                                        </div>
+
+                                        <!-- <input type="submit" class="" value="RESET"> -->
+                                        <!-- <input type="submit" class="btnSubmit" value="SUBMIT"> -->
+
+                                        
+            
+                                    </form>
+                                    
+                                </div>
+                            </li>
+                            
+                            <!-- <button class="action submit " type="button" onclick="submitForm()">Submit</button> -->
+                        
+                            
+                </ul>
+                
+                
+                
+            </div>
+            <div class=bottom>
+                <button class="nav" id="btnPrev" onclick="prev()">
+                    <span class="material-symbols-outlined show">
+                        navigate_before
+                    </span>
+                </button>
+                
+                <button class="pagination page" onclick="pageOne()">1</button>
+                <button class="pagination" onclick="pageTwo()">2</button>
+                <button class="pagination" onclick="pageThree()">3</button>
+                <button class="nav" id="btnNext" onclick="nxt()">
+                    <span class="material-symbols-outlined show">
+                        navigate_next
+                    </span>
+                </button>
+                
+                <button class="action reset disabled" onclick="resetForm()">Reset</button>
+                <button class="action submit " id="btnSubmit" type="button" onclick="triggerFormSubmission()">Submit</button>
+            
+            </div>
+            
+        </div>
+        <!-- {% endif %} -->
+        
+    
+        
+    </div> 
+    
+    <script>
+        let currentPage = 1;
+    
+        function showPage(pageNumber) {
+            // Hide all pages
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById(`page${i}`).style.display = 'none';
+            }
+    
+            // Show the selected page
+            document.getElementById(`page${pageNumber}`).style.display = 'block';
+            currentPage = pageNumber;
+        }
+
+        var page = 1;
+        
+        function prev() {
+            if (currentPage > 1) {
+                showPage(currentPage - 1);
+            }
+            
+            if(page == 2){
+                paginationBtns[0].classList.add("page");
+                paginationBtns[1].classList.remove("page");
+                paginationBtns[2].classList.remove("page");
+                page = 1;
+                // document.getElementById(`btnNext`).style.display = 'block';
+                // document.getElementById(`btnPrev`).style.display = 'block';
+            }else if(page == 3){
+                console.log(page);
+                paginationBtns[1].classList.add("page");
+                paginationBtns[0].classList.remove("page");
+                paginationBtns[2].classList.remove("page");
+                page = 2;
+
+                // document.getElementById(`btnNext`).style.display = 'block';
+                // document.getElementById(`btnPrev`).style.display = 'block';
+            }else if(page == 1){
+                // document.getElementById(`btnPrev`).style.display = 'none';
+            }
+        }
+    
+        function nxt() {
+            if (currentPage < 3) {
+                showPage(currentPage + 1);
+            }
+            // document.getElementById(`btnNext`).style.display = 'block';
+            // document.getElementById(`btnPrev`).style.display = 'block';
+            if(page == 1){
+                
+                paginationBtns[1].classList.add("page");
+                paginationBtns[0].classList.remove("page");
+                paginationBtns[2].classList.remove("page");
+                page = 2;
+            }else if(page == 2){
+                console.log(page);
+                paginationBtns[2].classList.add("page");
+                paginationBtns[0].classList.remove("page");
+                paginationBtns[1].classList.remove("page");
+                page = 3;
+                // document.getElementById(`btnNext`).style.display = 'none';
+                // document.getElementById(`btnPrev`).style.display = 'block';
+            }
+        }
+
+        function triggerFormSubmission() {
+            // Trigger form submission
+            document.getElementById('scoreForm').submit();
+        }
+
+        // if (currentPage == 3){
+        //     document.getElementById(`btnNext`).style.display = 'none';
+        // }
+        // else{
+        //     document.getElementById(`btnNext`).style.display = 'block';
+        // }
+        // if (currentPage == 1){
+        //     document.getElementById(`btnPrev`).style.display = 'none';
+        // }
+        // else{
+        //     document.getElementById(`btnPrev`).style.display = 'block';
+        // }
+    
+        // Initialize by showing the first page
+        showPage(1);
+    </script>
+      
+{% endblock content %}

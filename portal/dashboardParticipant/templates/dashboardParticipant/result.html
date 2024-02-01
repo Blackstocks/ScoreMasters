@@ -1,0 +1,56 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="top col-10">
+    <div class="">
+        <h1>Result</h1>
+    </div>
+</div>
+<div class="middle col-10">
+    <div class="container col-11">
+        <h2>Statistics</h2>
+        <div class="cards">
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    social_leaderboard
+                </span>
+                <h4>Rank: <span>{{ participant_rank }}</span></h4>
+            </div>
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    speed
+                </span>
+                <h4>Your Score: <span>{{ participant_score }}</span></h4>
+            </div>
+            <div class="card">
+                <span class="material-symbols-outlined">
+                    trophy
+                </span>
+                <h4>Top Score: <span>{{ top_score }}</span></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-11">
+        <h2>Score Breakdown</h2>
+        <table>
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th scope="col">Judge</th>
+                    <th scope="col">Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for score in scores %}
+                <tr>
+                    <td data-label="Judge" style="text-transform: capitalize">{{ score.judge_name }}</td>
+                    <td data-label="Score">{{ score.marks_given }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

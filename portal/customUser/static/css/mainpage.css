@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+a{
+    color: white;
+}
+
+body{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+    float: left;
+}
+
+.top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.top img:first-child{
+    height: 12vh;
+}
+
+.top img{
+    height: 10vh;
+}
+
+.middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 80vh;
+    height: fit-content;
+    /* text-align: center; */
+}
+
+.middle h1{
+    font-size: 3rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.middle p{
+    opacity: 0.8;
+    font-size: 1.1rem;
+}
+
+.middle .section{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middle .section img{
+    height: 12vh;
+}
+
+.middle .buttons{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 2.5rem;
+}
+
+.middle .buttons > span{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.6rem;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.middle .buttons > span:hover{
+    transform: scale(1.03);
+}
+
+.middle .buttons span a{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 
+.middle .buttons .register{
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    padding: 0 1.2rem;
+    color: #ddd;
+    border: none;
+    box-shadow: 0 .5rem 1rem rgba(143, 142, 142, 0.15)!important;
+    background: #000000;
+    transition: all 0.25s ease;
+}
+
+.middle .buttons .register:hover{
+    transform: translateY(-0.2rem);
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: fit-content;
+    text-align: center;
+}
+
+
+.bottom h2{
+    font-size: 3rem;
+}
+
+.bottom p{
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+.bottom .section{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    gap: 5vw;
+    margin: 2rem 0;
+    color: white;
+}
+
+.bottom .section div{
+    background-color: black;   
+    border-radius: 0.8rem;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 .5rem 1rem rgba(143, 142, 142, 0.15);
+    cursor: pointer;
+}
+
+.bottom .section div h3{
+    margin: 0.5rem 0;
+    padding: 0;
+}
+
+.bottom .section div a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    color: white;
+    gap: 5px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    text-decoration: none;
+    background-color: black;
+}
+
+.bottom .section div a:hover{
+    transform: scale(1.02);
+}
+
+.bottom .section div a span{
+    font-size: 1rem;
+} */

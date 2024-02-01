@@ -1,0 +1,31 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="top col-10">
+    <h2>Leaderboard</h2>
+</div>
+<div class="middle col-10">
+    <table>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Startup Name</th>
+                <th scope="col">Score</th>
+                {% comment %} <th scope="col">Status</th> {% endcomment %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for participant in participants %}
+            <tr>
+                <td data-label="Rank">{{ participant.rank }}</td>
+                <td data-label="Startup Name">{{ participant.user.username }}</td>
+                <td data-label="Score">{{ participant.total_score }}</td>
+                {% comment %} <td data-label="Status">{{ }}</td> {% endcomment %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

@@ -1,0 +1,102 @@
+{% load static %}
+
+{% if user.is_authenticated %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+   
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% if  'dashboard' in request.path %} <link rel="stylesheet" href="{% static 'css/dashboard.css' %}"> {% endif %}
+
+    {% if  'judging' in request.path %} <link rel="stylesheet" href="{% static 'css/judging.css' %}"> {% endif %}
+
+    {% if  'leaderboard' in request.path %} <link rel="stylesheet" href="{% static 'css/leaderboard.css' %}"> {% endif %}
+
+    {% if  'participants' in request.path %} <link rel="stylesheet" href="{% static 'css/participants.css' %}"> {% endif %}
+
+    <!-- Hint CSS -->
+    <link rel="stylesheet" href="{% static 'css/hint.base.css' %}" />
+
+    <!-- Google Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+<body>
+        <div class="sidebar col-2">
+            <div class="top">
+                <button id="hamburger" class="hint--right" aria-label="Expand">
+                    <span class="material-symbols-outlined">
+                        chevron_right
+                    </span>
+                </button>
+                <img id="logo-mobile" src="{% static 'images/ecell-logo-mobile.png' %}">
+                <img id="logo" src="{% static 'images/ecell-logo-white.png' %}" alt="ECell IIT Kharagpur">
+            </div>
+            <div class="middle">
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'judge_dashboard' %}" {% url 'judge_dashboard' as url %}
+                            {% if request.path == url %} class="active"{% endif %}
+                            aria-label="Dashboard">
+                            <span class="material-symbols-outlined">team_dashboard</span>
+                            <span class="linktxt">Dashboard</span></a></li>
+                        <li><a href="{% url 'judge_participants' %}" {% url 'judge_participants' as url %}
+                                {% if request.path == url %} class="active" {% endif %}
+                                aria-label="Participants">
+                                <span class="material-symbols-outlined">
+                                    groups
+                                </span>
+                                <span class="linktxt">Participants</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'judge_judge' participant_username='choose_participant' %}" 
+                            {% if 'judging' in request.path %}
+                                class="active"
+                            {% endif %} 
+                            aria-label="Judging Portal">
+                            <span class="material-symbols-outlined">
+                                gavel
+                            </span>
+                            <span class="linktxt">Judging Portal</span>
+                            </a>
+                        </li>
+                        <li><a href="{% url 'judge_leaderboard' panel_id=selected_panel_id|default:'1' %}">Leaderboard</a></li>
+
+                            {% if request.path == url %} class="active" {% endif %}
+                            aria-label="Leaderboard">
+                            <span class="material-symbols-outlined">
+                                leaderboard
+                            </span>
+                            <span class="linktxt">Leaderboard</span></a></li>
+                        <li><a href="{% url 'logout' %}?next={% url 'home' %}" aria-label="Log out">
+                            <span class="material-symbols-outlined">logout</span>
+                            <span class="linktxt">Log out</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- <div class="bottom">
+
+            </div> -->
+        </div>
+        <div class="main col-10">
+            {% block content %}{% endblock  %}
+        </div>
+</body>
+<script src="{% static 'js/hamburger.js' %}"></script>
+<script src="{% static 'js/mobileprofile.js' %}"></script>
+{% if  'judging' in request.path %} 
+    <script src="{% static 'js/fullscreen.js' %}"></script>
+    <script src="{% static 'js/pagination.js' %}"></script>
+{% endif %}
+</html>
+{% endif %}

@@ -1,0 +1,64 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="top col-10">
+    <h2>Leaderboard - Panel 1</h2>
+</div>
+<div class="middle col-10">
+    <!-- Leaderboard table for Panel 1 -->
+    <table>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Startup Name</th>
+                <th scope="col">Score</th>
+                <!-- Add other header columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for participant in participants_panel_1 %}
+                <tr>
+
+                    <td data-label="Rank">{{ forloop.counter }}</td>
+                    <td data-label="Startup Name">{{ participant.user.username }}</td>
+                    <td data-label="Score">{{ participant.total_score }}</td>
+                    <!-- Add other columns based on your Participant model -->
+                    
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="top col-10">
+    <h2>Leaderboard - Panel 2</h2>
+</div>
+<div class="middle col-10">
+    <!-- Leaderboard table for Panel 2 -->
+    <table>
+        <caption></caption>
+        <thead>
+            <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Startup Name</th>
+                <th scope="col">Score</th>
+                <!-- Add other header columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for participant in participants_panel_2 %}
+                <tr>
+                    <td data-label="Rank">{{ forloop.counter }}</td>
+                    <td data-label="Startup Name">{{ participant.user.username }}</td>
+                    <td data-label="Score">{{ participant.total_score }}</td>
+                    <!-- Add other columns based on your Participant model -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

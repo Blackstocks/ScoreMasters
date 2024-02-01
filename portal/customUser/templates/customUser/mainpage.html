@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresario</title>
+
+    <link rel="stylesheet" href="{% static 'css/mainpage.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+    <div class="top col-11">
+        <img src="{% static 'images/empresario.png' %}" alt=""> 
+        <img src="{% static 'images/ecell-logo.png' %}" alt=""> 
+    </div>
+    <div class="middle col-8">
+        <h1>Empresario</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique earum pariatur consequuntur magni esse maiores, sit amet consectetur adipisicing elit. Similique earum pariatur consequuntur magni esse maiores,  recusandae corrupti in. Illo hic illum cumque voluptas aspernatur repudiandae a eum voluptatem architecto dignissimos?</p>
+        
+        <div class="section">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia perferendis debitis rerum quisquam non, voluptatibus laboriosam minima eos reiciendis magni voluptas consequuntur soluta facilis omnis, dicta beatae quo, velit possimus!</p>
+            <img src="{% static 'images/ges.png' %}" alt=""> 
+        </div>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique earum pariatur consequuntur magni esse maiores, recusandae corrupti in. Illo hic illum cumque voluptas aspernatur repudiandae a eum voluptatem architecto dignissimos?</p>
+        <div class="buttons">
+            <span>
+                <a href="{% url 'participant_login' %}">Login as Participant</a>
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </span>
+            <span>
+                <a href="{% url 'judge_register' %}">Register as Judge</a>
+                <span class="material-symbols-outlined">
+                    arrow_forward
+                </span>
+            </span>
+        </div>
+    </div>
+    {% comment %} <div class="bottom col-8" id="register">
+        <h2>Register Now!</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia perferendis debitis rerum quisquam non, voluptatibus laboriosam minima eos reiciendis magni voluptas consequuntur soluta facilis omnis, dicta beatae quo, velit possimus!</p>
+        <div class="section col-5">
+            <div class="left">
+                <a href="{% url 'login' %}">
+                    <h3>Login as Participant</h3>
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </a>
+            </div>
+            <div class="right">
+                <a href="{% url 'register' %}">
+                    <h3>Register as Judge</h3>
+                    <span class="material-symbols-outlined">
+                        arrow_forward
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div> {% endcomment %}
+</body>
+</html>

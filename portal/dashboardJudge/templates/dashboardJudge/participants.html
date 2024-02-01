@@ -1,0 +1,61 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="top col-11">
+        <h1>Participants</h1>
+        <div class='message'>
+            {% if messages %}
+                {% for message in messages %}
+                    <strong>{{message}}</strong>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="search-container">
+            <input type="search" id="search" placeholder="search">
+            <button type="button" id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="container col-11">
+        <div class="cards">
+            {% for user in users %}
+                <div class="card" id="user-cards">
+                    <h3>{{ user.username }}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                    <div class="buttons">
+                        <a href="{% url 'judge_judge' participant_username=user.username %}">Judge</a>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <script>
+
+$(document).ready(function () {
+        $('#search-button').click(filterUsers);
+        $('#search').on('input', filterUsers);
+
+        function filterUsers() {
+            var searchTerm = $('#search').val().toLowerCase();
+
+            $('.card').each(function () {
+                var username = $(this).find('h3').text().toLowerCase();
+
+                if (username.includes(searchTerm)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        }
+    });
+
+    </script>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresario</title>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+<body>
+    <div class="top col-11">
+        <a href="/" ><img id="logo" src="{% static 'images/empresario.png' %}" alt="ECell IIT Kharagpur"></a>
+        <a href="/" ><img id="logo" src="{% static 'images/ecell-logo.png' %}" alt="ECell IIT Kharagpur"></a>
+    </div>
+    <div class="middle col-10">
+        <div class="left col-5">
+            <div class="info">
+                <h1>Judging Portal</h1>
+                <h2>Empresario</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum sed eveniet voluptate illum nobis, obcaecati quia rem totam beatae voluptatibus accusantium cumque corrupti nihil labore, quam minus quo reiciendis. Fuga.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, quas! Placeat voluptates debitis a excepturi est inventore illo aliquid consequuntur sequi, explicabo, distinctio exercitationem aspernatur cumque ab quibusdam repellat atque?</p>
+            </div>
+        </div>
+        <div class="right col-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- <div class="bottom">
+
+    </div> -->
+</body>
+</html>
+
+{% comment %} {% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Logout?</a>
+    </div>
+{% else %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome!</h3>
+        <a href="{% url 'register' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %} {% endcomment %}

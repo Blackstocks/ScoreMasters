@@ -1,0 +1,135 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vh;
+}
+
+.main .top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .middle .container {
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem 0;
+}
+
+.main .middle .container .cards{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+    max-width: fit-content;
+}
+
+.main .middle .container .cards .card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    border-radius: 0.6rem;
+    color: rgba(255, 255, 255, 0.9);
+    gap: 0.5rem;
+    padding: 0.8rem 0.8rem;
+}
+
+.main .middle .container .cards .card h4{
+    margin: 0;
+}
+
+.main .middle .container .cards .card h4 span{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.main .middle .container .cards .card:hover{
+    transform: scale(1.02);
+    transition: all linear 0.1s;
+}
+
+
+
+
+.main .middle table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 4rem;
+  }
+  
+  .main .middle table caption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+  }
+  
+  .main .middle table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  .main .middle table th,
+  .main .middle table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  .main .middle table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .main .middle table {
+      border: 0;
+    }
+  
+    .main .middle table caption {
+      font-size: 1.3em;
+    }
+    
+    .main .middle table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    .main .middle table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: .625em;
+    }
+    
+    .main .middle table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+    }
+    
+    .main .middle table td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    .main .middle table td:last-child {
+      border-bottom: 0;
+    }
+  }

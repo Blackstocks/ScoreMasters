@@ -1,0 +1,45 @@
+{% extends './home.html' %}
+
+{% block content %}
+  <div class="form-container col-8">
+    <p class="title">Verify OTP</p>
+    <div class="input-group" style="display:flex; flex-direction:column; gap: 1rem;">
+        <input type="text" name="otp" id="otp">
+        <button class="sign" onclick="verify('{{ otp }}')">Submit</button>
+    </div>
+    <p class="signin">Entered wrong email?
+      <a href="{% url 'judge_register' %}" class="">Edit email</a>
+    </p>
+  </div>
+<script>
+  function verify(otp) {
+    let otpValue = otp;
+    let username = '{{ username }}';
+    let firstName = '{{ first_name }}';
+    let lastName = '{{ last_name }}';
+    let email = '{{ email }}';
+    let password1 = '{{ password1 }}';
+    let password2 = '{{ password2 }}';
+
+    if (otpValue === otp) {
+      $.ajax({
+        type: 'POST',
+        url: '{% url 'judge_verify' %}',
+        data: {
+          'otp': otpValue,
+          'username': username,
+          'first_name': firstName,
+          'last_name': lastName,
+          'email': email,
+          'password1': password1,
+          'password2': password2,
+        },
+        success: function(data) {
+            window.location.href = '{% url 'judge_login' %}';
+        }
+      });
+    }
+  }
+</script>
+
+{% endblock content %}

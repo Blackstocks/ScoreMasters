@@ -1,0 +1,27 @@
+{% extends './home.html' %}
+
+{% block content %}
+
+<div class="form-container col-9">
+    <p class="title">Register as Judge</p>
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="input-group">
+                {{ field.label }}
+                {{ field }}
+                {% for error in field.errors %}
+                    <small style="color: red">{{ error }}</small>
+                {% endfor %}
+            </div>
+        {% endfor %}
+
+        <br>
+        <button class="sign" type="submit">Verify Email</button>
+    </form>
+    <p class="signin">Have an account?
+        <a rel="noopener noreferrer" href="{% url 'judge_login' %}" class="">Sign In as Judge</a>
+    </p>
+</div>
+{% endblock content %}

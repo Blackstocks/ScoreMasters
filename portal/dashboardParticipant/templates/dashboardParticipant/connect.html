@@ -1,0 +1,28 @@
+{% extends './main.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="top col-11">
+        <h1>Connect With Judges</h1>
+        <div>
+            <input type="search" id="search">
+        </div>
+    </div>
+
+    <div class="container col-11">
+        <div class="cards">
+            {% for judge in judges %}
+                <div class="card">
+                    <h3>{{ judge.user }}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+                    <div class="buttons">
+                        <a href="">Connect</a>
+                    </div>
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock content %}
