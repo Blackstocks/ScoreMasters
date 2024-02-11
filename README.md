@@ -2,8 +2,6 @@
 
 It's a tailor-made judging dashboard exclusively crafted for Empresario, IIT Kharagpur's annual business model competition. Ensuring user-friendly navigation, scalability, and real-time updates, it incorporates mobile responsiveness, customizable scoring, multimedia integration, and detailed startup profiles. Prioritizing security, a feedback mechanism, and post-event analytics have been seamlessly integrated for a refined and efficient judging process.
 
-View the deployment of the project here: https://community.ecell-iitkgp.org
-
 ## Project Description:
 
 - Developed using Django, HTML, CSS, and MySQL, the portal is a robust platform for Empresario, allowing seamless integration and efficient data management.
